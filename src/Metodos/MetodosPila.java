@@ -4,23 +4,21 @@ import Estructuras.Pila;
 import interfaces.iPila;
 
 
-public class MetodosPila implements iPila{
+public class MetodosPila{
     Pila pilaAux;
-    @Override
-    public iPila invertirPila(iPila pila) {
+    public Pila invertirPila(Pila pila) {
         Pila p1 = new Pila();
-        p1 = (Pila)pila;
+        p1 = pila;
         while(!p1.isEmpty()){
             pilaAux.push(p1.pop());
        }
-        return (iPila)pilaAux;
+        return pilaAux;
     }
 
-    @Override
-    public void mostrarPila(iPila pila) {
+    public void mostrarPila(Pila pila) {
         Object o1 = new Object();
         Pila p1 = new Pila();
-        p1 = (Pila)pila;
+        p1 = pila;
         while(!p1.isEmpty()){
             o1 = p1.pop();
             o1.toString();
