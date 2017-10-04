@@ -20,6 +20,13 @@ public class Main {
         Pila pila = new Pila();
         int opMenu;
         
+        Persona p1 = new Persona("Persona 1",1);
+        Persona p2 = new Persona("Persona 2",2);
+        Persona p3 = new Persona("Persona 3",3);
+        pila.push(p1);
+        pila.push(p2);
+        pila.push(p3);
+        
         do{
             opMenu = menu();
             switch(opMenu){
@@ -30,7 +37,7 @@ public class Main {
                     String nombre = Leer. dato();
                     System.out.println("Ingrese ID de la persona");
                     int id = Leer.datoInt();
-                    Persona p1 = new Persona(nombre,id);
+                    Persona p4 = new Persona(nombre,id);
                     pila.push(p1);
                     
                     pausa();
@@ -38,7 +45,7 @@ public class Main {
                 case 2:
                     limpiaP();
                     
-                    mp1.mostrarPila((iPila)pila);
+                    mp1.mostrarPila(pila);
                     
                     pausa();
                     break;
