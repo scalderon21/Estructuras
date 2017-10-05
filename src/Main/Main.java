@@ -7,28 +7,27 @@ import Metodos.MetodosPila;
 public class Main {
         public static int menu(){
         System.out.println("\n1. Ingresar Persona");
-        System.out.println("2. Mostrar Persona");
-        System.out.println("3. Salir");
+        System.out.println("2. Mostrar Pila");
+        System.out.println("3. Invertir y Mostrar Pila");
+        System.out.println("4. Salir");
         System.out.print("Ingrese opcion ");
         return Leer.datoInt();
     }
    
     
     public static void main(String[] args) {
+        
+        Object o1;
+        Persona persona = new Persona("Sebastian",1);
+        o1 = persona;
+        System.out.println(o1.toString());
+        
+        
         MetodosPila mp1 = new MetodosPila();
-        Pila pila = new Pila();
         int opMenu;
-        
-        /*
-        Persona p1 = new Persona("Persona 1",1);
-        Persona p2 = new Persona("Persona 2",2);
-        Persona p3 = new Persona("Persona 3",3);
-        pila.push(p1);
-        pila.push(p2);
-        pila.push(p3);
-        */
-        
+        Pila pila = new Pila();
         do{
+            
             opMenu = menu();
             switch(opMenu){
                 case 1:
@@ -48,9 +47,20 @@ public class Main {
                     mp1.mostrarPila(pila);
                     pausa();
                     break;
+                case 3:
+                    
+                    limpiaP();
+                    
+                    Pila pilaInvertida = new Pila();
+                    pilaInvertida = mp1.invertirPila(pila);
+                    mp1.mostrarPila(pilaInvertida);
+                    
+                    pausa();
+                    break;
+
             }
                     
-        }while(opMenu != 3);
+        }while(opMenu != 4);
     }
     
     public static void pausa(){
