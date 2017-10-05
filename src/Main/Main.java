@@ -16,14 +16,13 @@ public class Main {
    
     
     public static void main(String[] args) {
-        
+        MetodosPila mp1 = new MetodosPila();
+        /*
         Object o1;
         Persona persona = new Persona("Sebastian",1);
-        o1 = persona;
+        o1 = (Persona)persona;
         System.out.println(o1.toString());
-        
-        
-        MetodosPila mp1 = new MetodosPila();
+        */
         int opMenu;
         Pila pila = new Pila();
         do{
