@@ -29,6 +29,7 @@ public class Persona {
     }
     
     public String toString(){
-        return "id: "+getId()+"\n nombre: "+getNombre();
+        return "id: "+getId()+"\n"+
+               "nombre: "+getNombre();
     }
 }
