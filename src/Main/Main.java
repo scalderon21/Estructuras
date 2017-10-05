@@ -3,7 +3,6 @@ package Main;
 import Clases.Persona;
 import Estructuras.Pila;
 import Metodos.MetodosPila;
-import interfaces.iPila;
 
 public class Main {
         public static int menu(){
@@ -20,12 +19,14 @@ public class Main {
         Pila pila = new Pila();
         int opMenu;
         
+        /*
         Persona p1 = new Persona("Persona 1",1);
         Persona p2 = new Persona("Persona 2",2);
         Persona p3 = new Persona("Persona 3",3);
         pila.push(p1);
         pila.push(p2);
         pila.push(p3);
+        */
         
         do{
             opMenu = menu();
@@ -37,16 +38,14 @@ public class Main {
                     String nombre = Leer. dato();
                     System.out.println("Ingrese ID de la persona");
                     int id = Leer.datoInt();
-                    Persona p4 = new Persona(nombre,id);
+                    Persona p1 = new Persona(nombre,id);
                     pila.push(p1);
                     
                     pausa();
                     break;
                 case 2:
                     limpiaP();
-                    
                     mp1.mostrarPila(pila);
-                    
                     pausa();
                     break;
             }
@@ -60,7 +59,7 @@ public class Main {
     }
     
     public static void limpiaP(){
-        for (int i = 0; i < 35; i++) {
+        for (int i = 0; i < 25; i++) {
             System.out.println("                                                           ");
             
         }
