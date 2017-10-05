@@ -1,8 +1,9 @@
 package Main;
 
 import Clases.Persona;
-import Estructuras.Pila;
+import Estructuras.PilaV;
 import Metodos.MetodosPila;
+import java.util.Stack;
 
 public class Main {
         public static int menu(){
@@ -13,25 +14,17 @@ public class Main {
         System.out.print("Ingrese opcion ");
         return Leer.datoInt();
     }
-   
     
     public static void main(String[] args) {
         MetodosPila mp1 = new MetodosPila();
-        /*
-        Object o1;
-        Persona persona = new Persona("Sebastian",1);
-        o1 = (Persona)persona;
-        System.out.println(o1.toString());
-        */
+        PilaV pila = new PilaV();
         int opMenu;
-        Pila pila = new Pila();
+        
         do{
-            
             opMenu = menu();
             switch(opMenu){
                 case 1:
                     limpiaP();
-                    
                     System.out.println("Ingrese nombre Persona");
                     String nombre = Leer. dato();
                     System.out.println("Ingrese ID de la persona");
@@ -43,16 +36,16 @@ public class Main {
                     break;
                 case 2:
                     limpiaP();
-                    mp1.mostrarPila(pila);
+                    pila = mp1.mostrarPilaVPersona(pila);
                     pausa();
                     break;
                 case 3:
                     
                     limpiaP();
                     
-                    Pila pilaInvertida = new Pila();
-                    pilaInvertida = mp1.invertirPila(pila);
-                    mp1.mostrarPila(pilaInvertida);
+                    PilaV pilaInvertidaV = new PilaV();
+                    pilaInvertidaV = mp1.invertirPilaV(pila);
+                    mp1.mostrarPilaVPersona(pilaInvertidaV);
                     
                     pausa();
                     break;
@@ -60,6 +53,8 @@ public class Main {
             }
                     
         }while(opMenu != 4);
+        
+        Stack s = new Stack();
     }
     
     public static void pausa(){
@@ -68,7 +63,7 @@ public class Main {
     }
     
     public static void limpiaP(){
-        for (int i = 0; i < 25; i++) {
+        for (int i = 0; i < 5; i++) {
             System.out.println("                                                           ");
             
         }
